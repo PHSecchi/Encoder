@@ -1,0 +1,49 @@
+﻿------ Rebuild All started: Project: Encoder, Configuration: Debug AVR ------
+Build started.
+Project "Encoder.cproj" (ReBuild target(s)):
+Target "PreBuildEvent" skipped, due to false condition; ('$(PreBuildEvent)'!='') was evaluated as (''!='').
+Target "CoreRebuild" in file "C:\Program Files (x86)\Atmel\AVR Studio 5.1\Vs\Compiler.targets" from project "C:\Users\PHSecchi\Google Drive\Projetos\Everton\Encoder\Encoder_v3\Encoder\Encoder.cproj" (target "ReBuild" depends on it):
+	Task "RunCompilerTask"
+		C:\Program Files (x86)\Atmel\AVR Studio 5.1\make\make.exe clean all 
+		rm -rf  Encoder.o LCD.o USART.o Encoder.d LCD.d USART.d  
+		rm -rf "Encoder.hex" "Encoder.lss" "Encoder.eep" "Encoder.map"
+Encoder.c
+		Invoking: AVR/GNU C Compiler
+		"C:\Program Files (x86)\Atmel\AVR Studio 5.1\extensions\Atmel\AVRGCC\3.3.1.27\AVRToolchain\bin\avr-gcc.exe"  -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "Encoder.d" -MT"Encoder.d"  -mmcu=atmega328p  -o"Encoder.o" ".././Encoder.c" 
+		.././Encoder.c: In function 'main':
+C:\Users\PHSecchi\Google Drive\Projetos\Everton\Encoder\Encoder_v3\Encoder\Encoder.c(73,8): unused variable 'conversor'
+		.././Encoder.c: In function 'inic_SPI':
+C:\Users\PHSecchi\Google Drive\Projetos\Everton\Encoder\Encoder_v3\Encoder\Encoder.c(197,9): left shift count >= width of type
+		Finished building: .././Encoder.c
+LCD.c
+		Invoking: AVR/GNU C Compiler
+		"C:\Program Files (x86)\Atmel\AVR Studio 5.1\extensions\Atmel\AVRGCC\3.3.1.27\AVRToolchain\bin\avr-gcc.exe"  -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "LCD.d" -MT"LCD.d"  -mmcu=atmega328p  -o"LCD.o" ".././LCD.c" 
+		Finished building: .././LCD.c
+USART.c
+		Invoking: AVR/GNU C Compiler
+		"C:\Program Files (x86)\Atmel\AVR Studio 5.1\extensions\Atmel\AVRGCC\3.3.1.27\AVRToolchain\bin\avr-gcc.exe"  -funsigned-char -funsigned-bitfields -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "USART.d" -MT"USART.d"  -mmcu=atmega328p  -o"USART.o" ".././USART.c" 
+		Finished building: .././USART.c
+		Building target: Encoder.elf
+		Invoking: AVR/GNU C Linker
+		"C:\Program Files (x86)\Atmel\AVR Studio 5.1\extensions\Atmel\AVRGCC\3.3.1.27\AVRToolchain\bin\avr-gcc.exe" -o Encoder.elf  Encoder.o LCD.o USART.o   -Wl,-Map="Encoder.map" -Wl,-lm   -mmcu=atmega328p  
+		Finished building target: Encoder.elf
+		"C:\Program Files (x86)\Atmel\AVR Studio 5.1\extensions\Atmel\AVRGCC\3.3.1.27\AVRToolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature  "Encoder.elf" "Encoder.hex"
+		"C:\Program Files (x86)\Atmel\AVR Studio 5.1\extensions\Atmel\AVRGCC\3.3.1.27\AVRToolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Encoder.elf" "Encoder.eep" || exit 0
+		"C:\Program Files (x86)\Atmel\AVR Studio 5.1\extensions\Atmel\AVRGCC\3.3.1.27\AVRToolchain\bin\avr-objdump.exe" -h -S "Encoder.elf" > "Encoder.lss"
+		"C:\Program Files (x86)\Atmel\AVR Studio 5.1\extensions\Atmel\AVRGCC\3.3.1.27\AVRToolchain\bin\avr-size.exe" -C --mcu=atmega328p  "Encoder.elf"
+		AVR Memory Usage
+		----------------
+		Device: atmega328p
+		Program:    2928 bytes (8.9% Full)
+		(.text + .data + .bootloader)
+		Data:         38 bytes (1.9% Full)
+		(.data + .bss + .noinit)
+	Done executing task "RunCompilerTask".
+Done building target "CoreRebuild" in project "Encoder.cproj".
+Target "PostBuildEvent" skipped, due to false condition; ('$(PostBuildEvent)' != '') was evaluated as ('' != '').
+Target "ReBuild" in file "C:\Program Files (x86)\Atmel\AVR Studio 5.1\Vs\Avr.common.targets" from project "C:\Users\PHSecchi\Google Drive\Projetos\Everton\Encoder\Encoder_v3\Encoder\Encoder.cproj" (entry point):
+Done building target "ReBuild" in project "Encoder.cproj".
+Done building project "Encoder.cproj".
+
+Build succeeded.
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========

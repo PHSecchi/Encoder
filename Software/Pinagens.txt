@@ -1,0 +1,25 @@
+-Entradas-
+Botão de Início: PD0	
+Botao de Reset: PD2	
+Encoder: PD3
+
+-Saída-
+PWM: PD6
+
+LCD: PortC
+VSS-GND
+VDD-VCC
+ VO-TRP
+ RS-A5
+ RW-GND
+  E-A6
+ D0-GND
+ D1-GND
+ D2-GND
+ D3-GND
+ D4-A0
+ D5-A1
+ D6-A2
+ D7-A3
+
+A/D

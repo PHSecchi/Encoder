@@ -1,0 +1,62 @@
+ spi();
+           Px=P2-((V2-Vx)*(P2-P1)/(V2-V1));
+	       Pxint=Px*1000;	
+
+    switch(estado)
+	      {case 0:
+             {cmd_LCD(0x84,0);	
+		     escreve_LCD_Flash(msg_bem);
+		     cmd_LCD(0xC5,0);	
+		     escreve_LCD_Flash(msg_vindo);
+		     _delay_ms(2000);
+			 estado=1;
+			 break;}	
+			}		 
+		
+   
+           case 1:
+		     {cmd_LCD(0x80,0); 
+		      escreve_LCD_Flash(msg_pronto);
+		      cmd_LCD(0xc0,0); 
+		      escreve_LCD_Flash(msg_limp);
+		      if(!tst_bit(PIND,BTI))
+			   {estado=2;
+			   cmd_LCD(0x80,0); 
+		       escreve_LCD_Flash(msg_limp);
+			   cmd_LCD(0xc0,0); 
+		       escreve_LCD_Flash(msg_limp);
+			   OCR0A= Pxint;
+			   sei();}
+		       break;}
+
+      case 2:{cmd_LCD(0x80,0);escreve_LCD_Flash(msg_vlo);
+		                         ident_num(Pxint,digitos);
+			                     cmd_LCD(0x87,0);
+								 cmd_LCD(digitos[4],1);
+			                     cmd_LCD(digitos[3],1);							 
+								 cmd_LCD(digitos[2],1);
+			                     cmd_LCD(digitos[1],1);
+								 cmd_LCD(digitos[0],1);
+								 cmd_LCD(' ',1);
+			                     cmd_LCD('R',1);
+								 cmd_LCD('P',1);
+			                     cmd_LCD('M',1);
+			  cmd_LCD(0xc0,0);escreve_LCD_Flash(msg_freq);
+		                         ident_num(Vx,digitos);
+			                     cmd_LCD(0xC7,0);
+								 cmd_LCD(digitos[4],1);
+			                     cmd_LCD(digitos[3],1);							 
+								 cmd_LCD(digitos[2],1);
+			                     cmd_LCD(digitos[1],1);
+								 cmd_LCD(digitos[0],1);
+								 cmd_LCD(' ',1);
+			                     cmd_LCD('H',1);
+								 cmd_LCD('z',1);
+			                     
+								 break;} 	  
+	  
+  }
+  
+  
+  
+	  }  
